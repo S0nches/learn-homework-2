@@ -10,12 +10,13 @@
 
 """
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
 
-if __name__ == "__main__":
-    main()
+import csv
+names = [{"age": 18, "name": 'Ann', "job": 'SMM'}, {"age": 28, "name": 'Kate', "job": 'Finance'}]
+
+with open('exp.csv', 'w', encoding='utf-8', newline='') as f:
+    fields = ["age", "name", "job"]
+    writer = csv.DictWriter(f, fields, delimiter=';')
+    writer.writeheader()
+    for user in names:
+        writer.writerow(user)

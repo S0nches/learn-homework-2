@@ -8,21 +8,26 @@
 
 """
 
-def print_days():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+from datetime import datetime, timedelta
+
+dt_now = datetime.now()
+print(dt_now)
+
+delta = timedelta(days=1)
+
+dt = dt_now - delta
+print(dt)
+
+delta2 = timedelta(days=30)
+
+dt2 = dt_now - delta2
+print(dt2)
+
+date_string = "01/01/20 12:10:03.234567"
+
+date_dt = datetime.strptime(date_string, '%m/%d/%y %H:%M:%S.%f')
+print(date_dt)
 
 
-def str_2_datetime(date_string):
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
 
-if __name__ == "__main__":
-    print_days()
-    print(str_2_datetime("01/01/20 12:10:03.234567"))
+
